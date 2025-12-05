@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>pingpong</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    @font-face {
+      font-family: 'Y2K Brutalism';
+      src: url('./Y2K Brutalism Typeface.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="./index.html" class="logo-link">
+      <div class="logo">
+        <div class="logo-line">
+          <span class="char-s-blue">S</span><span class="char-o-white">O</span><span class="char-l-pink">L</span>
+        </div>
+        <div class="logo-line">
+          <span class="char-ca-white">C</span><span class="char-a-yellow">A</span><span class="char-s-white">S</span>
+        </div>
+        <div class="logo-line">
+          <span class="char-s-green">S</span><span class="char-y-white">Y</span>
+        </div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <div class="menu-container">
+        <a href="#" id="menu-toggle">MENU</a>
+        <div class="menu-dropdown" id="menu-dropdown">
+          <a href="./index.html">MAIN PAGE</a>
+          <a href="./pong.html">GAME</a>
+          <a href="./index.html#portfolio">PORTFOLIO</a>
+          <a href="./index.html#contact">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="gameContainer">
+    <div id="gameWrapper">
+      <canvas id="pong" width="640" height="400"></canvas>
+    </div>
+    <div class="game-instructions">
+      <p>Controles:</p>
+      <p>W / S o ↑ / ↓</p>
+    </div>
+  </div>
+
+  <div class="game-button">
+    <a href="./index.html">Back to main page</a>
+  </div>
+
+  <script src="./script.js"></script>
+  <script>
+    // Menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuDropdown = document.getElementById('menu-dropdown');
+      
+      if (menuToggle && menuDropdown) {
+        menuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          menuDropdown.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (menuDropdown && menuDropdown.classList.contains('active')) {
+            if (!menuToggle.contains(e.target) && !menuDropdown.contains(e.target)) {
+              menuDropdown.classList.remove('active');
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
