@@ -328,7 +328,7 @@ if (!canvas) {
     loadModel('/models/nokia/source/nokian81.gltf');
 
     // Cargar imagen de fondo interactiva
-    setBackground('/ChatGPT Image Nov 20, 2025, 08_15_27 PM.png');
+    setBackground('/imgfondo.png');
 
     // Exportar funciones para usar desde fuera
     window.loadGLTFModel = loadModel;
