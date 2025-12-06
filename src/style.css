@@ -364,6 +364,19 @@ body{
     letter-spacing: 1px;
   }
 
+  .portfolio-item-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    color: inherit;
+  }
+
+  .portfolio-item-link:hover {
+    text-decoration: none;
+  }
+
   .portfolio-item {
     display: flex;
     flex-direction: column;
@@ -404,6 +417,45 @@ body{
 
   #dui-item:hover {
     box-shadow: 0 0 30px rgba(65, 105, 225, 1), 0 0 50px rgba(65, 105, 225, 0.8);
+  }
+
+  .try-on-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  #dui-item:hover .try-on-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .try-on-text {
+    font-family: 'Y2K Brutalism', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #4169E1;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  #dui-item:hover .try-on-text {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 
   #dui-item .portfolio-image {
